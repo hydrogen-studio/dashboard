@@ -5,7 +5,7 @@
 </head>
 
 <body>
-
+<div id="prefixformdiv">
 <form id="myForm" onsubmit="sendData()" action="http://api.hydrogenbot.xyz/v1/owner/prefix" method="post">
   <label for="ownerkey">Ownerkey: </label>
   <input id="ownerkey" name="ownerkey">
@@ -13,7 +13,7 @@
   <input id="prefix" name="prefix">
   <input type="submit" value="Submit">
 </form>
-
+</div>
 <script>
   function sendData() {
     const XHR = new XMLHttpRequest();
