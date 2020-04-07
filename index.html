@@ -5,7 +5,7 @@
 </head>
 
 <body>
-<div id="prefixformdiv" width=100 height=100 style="background-color:aqua;color:white;padding:20px;">
+<div id="prefixformdiv" width=100 height=100 style="background-color:aqua;color:white;">
 <form id="myForm" onsubmit="sendData()" action="http://api.hydrogenbot.xyz/v1/owner/prefix" method="post">
   <label for="ownerkey">Ownerkey: </label>
   <input id="ownerkey" name="ownerkey">
@@ -30,6 +30,8 @@ form {
    color: blue
 }
   #prefixformdiv {
+    height: 100px;
+    width: 200%;
     background-color: aqua
   }
 </style>
