@@ -12,25 +12,13 @@
   <input type="submit" value="Submit">
 </form>
   
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="../index.js"></script>
  <script>
    function onSubmit(){
-  var x = document.forms["prefixform"]["ownerkey"].value;
-  var y = document.forms["prefixform"]["prefix"].value;
-            $.ajax({
-          url: "http://64.52.85.124:80/v1/ssddpre",
-          type: "POST",
-          headers: {
-            ownerkey: x,
-            prefix: y
-          },
-          success: function(result) {
-            console.log(result);
-          },
-          error: function(error) {
-            console.log(error);
-          }
-        });
+  var ownk = document.forms["prefixform"]["ownerkey"].value;
+  var p = document.forms["prefixform"]["prefix"].value;
+  
+pre.set(og.get(ownk).value, { prefix: p })
    }
   </script>
 
