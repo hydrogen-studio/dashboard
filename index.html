@@ -13,34 +13,13 @@
   <input type="submit" value="Submit">
 </form>
 </div>
-<script>
-  function sendData() {
-    const XHR = new XMLHttpRequest();
-    // Bind the FormData object and the form element
 
-    // Define what happens on successful data submission
-    XHR.addEventListener( "load", function(event) {
-      alert( event.target.responseText );
-    } );
-
-    // Define what happens in case of error
-    XHR.addEventListener( "error", function( event ) {
-      alert( 'Oops! Something went wrong.' );
-    } );
-    let form = document.getElementById( "myForm" )
-    // Set up our request
-    XHR.open( "POST", "http://64.52.85.124:80/v1/owner/prefix" );
-
-    XHR.send({ form.getElementById("ownerkey").value, prefix: form.getElementById("prefix").value });
-  }
-
-</script>
 
 </body>
 
 <style>
   body {
-  background-color: 00FFFFrgbcolorcode.com › color › aqua;
+  background-color: 00FFFF;
 }
 h1 {
   color: blue;
@@ -48,4 +27,7 @@ h1 {
 p {
   color: red;
 }
+  #prefixformdiv{
+    background-color: 00FFFF;
+  }
 </style>
