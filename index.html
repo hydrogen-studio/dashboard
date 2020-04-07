@@ -11,15 +11,26 @@
   <input type="text" id="prefix" name="prefix"><br><br>
   <input type="submit" value="Submit">
 </form>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  <script>
    function onSubmit(){
   var x = document.forms["prefixform"]["ownerkey"].value;
   var y = document.forms["prefixform"]["prefix"].value;
-  
-  xhttp.open("POST", "http://api.hydrogenbot.xyz/v1/ssddpre", true);
-    xhttp.setRequestHeader("ownerkey", x);
-    xhttp.setRequestHeader("prefix", y);
-    xhttp.send("test")
+            $.ajax({
+          url: "http://api.hydrogenbot.xyz/v1/ssddpre",
+          type: "POST",
+          headers: {
+            ownerkey: x,
+            prefix: y
+          },
+          success: function(result) {
+            console.log(result);
+          },
+          error: function(error) {
+            console.log(error);
+          }
+        });
    }
   </script>
 
