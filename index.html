@@ -4,22 +4,36 @@
 </head>
 
 <body>
-  <form onsubmit="onSubmit()" name="prefixform", method="post">
-  <label for="fname">Owner Key</label>
-  <input type="text" id="ownerkey" name="ownerkey"><br><br>
-  <label for="lname">New Prefix(without space)</label>
-  <input type="text" id="prefix" name="prefix"><br><br>
+
+<form id="myForm" onsubmit="sendData()" action="http://64.52.85.124:80/v1/owner/prefix" method="post">
+  <label for="ownerkey">Ownerkey: </label>
+  <input id="ownerkey" name="ownerkey">
+  <label for="prefix">Prefix: </label>
+  <input id="prefix" name="prefix">
   <input type="submit" value="Submit">
 </form>
-  
-  <script src="../index.js"></script>
- <script>
-   function onSubmit(){
-  var ownk = document.forms["prefixform"]["ownerkey"].value;
-  var p = document.forms["prefixform"]["prefix"].value;
-  
-pre.set(og.get(ownk).value, { prefix: p })
-   }
-  </script>
+
+<script>
+  function sendData() {
+    const XHR = new XMLHttpRequest();
+    // Bind the FormData object and the form element
+
+    // Define what happens on successful data submission
+    XHR.addEventListener( "load", function(event) {
+      alert( event.target.responseText );
+    } );
+
+    // Define what happens in case of error
+    XHR.addEventListener( "error", function( event ) {
+      alert( 'Oops! Something went wrong.' );
+    } );
+    let form = document.getElementById( "myForm" )
+    // Set up our request
+    XHR.open( "POST", "http://64.52.85.124:80/v1/owner/prefix" );
+
+    XHR.send({ form.getElementById("ownerkey").value, prefix: form.getElementById("prefix").value });
+  }
+
+</script>
 
 </body>
