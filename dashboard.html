@@ -1,0 +1,37 @@
+<head>
+  <title>Hydrogen Bot Dashboard</title>
+  <link rel="shortcut icon" href="https://images-ext-1.discordapp.net/external/J7fAxgLkycPrd5GIGnl8JtIW6-7AikZufvCymtcm_RA/https/cdn.discordapp.com/avatars/627370793369600011/f02701e676b26c111cc8e067aa27d4b2.webp" />
+
+</head>
+
+<body>
+<div id="prefixformdiv" width=100 height=100 style="background-color:aqua;color:white;">
+<form id="myForm" onsubmit="sendData()" action="http://api.hydrogenbot.xyz/v1/owner/prefix" method="post">
+  <label for="ownerkey">Ownerkey: </label>
+  <input id="ownerkey" name="ownerkey">
+  <label for="prefix">Prefix: </label>
+  <input id="prefix" name="prefix">
+  <input type="submit" value="Submit">
+</form>
+</div>
+
+
+</body>
+
+<style>
+
+h1 {
+  color: blue;
+}
+p {
+  color: red;
+}
+form {
+   color: blue
+}
+  #prefixformdiv {
+    height: 100px;
+    width: 50px;
+    background-color: aqua
+  }
+</style>
